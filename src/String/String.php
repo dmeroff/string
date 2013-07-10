@@ -128,6 +128,18 @@ class String
     }
 
     /**
+     * Reverses a string.
+     * 
+     * @return $this
+     */
+    public function reverse()
+    {
+        $this->string = implode(array_reverse(str_split($this->string)));
+
+        return $this;
+    }
+
+    /**
      * Returns the length of a string.
      *
      * @return int

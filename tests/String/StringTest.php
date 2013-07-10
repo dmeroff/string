@@ -71,6 +71,14 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('hello, world', 'string', $string);
     }
 
+    public function testReverse()
+    {
+        $string = new String('string');
+        $string->reverse();
+
+        $this->assertAttributeEquals('gnirts', 'string', $string);
+    }
+
     public function testLength()
     {
         $string = new String('Hello, world');
