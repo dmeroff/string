@@ -1,7 +1,7 @@
 <?php
 namespace Dektrium\Component\String\Tests;
 
-use Dektrium\Component\String\String;
+use String;
 
 class StringTest extends \PHPUnit_Framework_TestCase
 {

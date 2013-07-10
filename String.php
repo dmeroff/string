@@ -1,4 +1,4 @@
-<?php namespace Dektrium\Component\String;
+<?php namespace String;
 
 /**
  * This class allows manipulating strings as objects.
