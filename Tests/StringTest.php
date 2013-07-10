@@ -9,18 +9,18 @@ class StringTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         // using constructor
-        $s = new String('Hello, world!');
-        $this->assertAttributeEquals('Hello, world!', 'string', $s);
+        $string = new String('Hello, world!');
+        $this->assertAttributeEquals('Hello, world!', 'string', $string);
 
         // using static function 'make'
-        $s = String::make('Hello, world!');
-        $this->assertAttributeEquals('Hello, world!', 'string', $s);
+        $string = String::make('Hello, world!');
+        $this->assertAttributeEquals('Hello, world!', 'string', $string);
     }
 
     public function test__ToString()
     {
-        $s = new String('Hello, world!');
-        $this->assertEquals('Hello, world!', sprintf("%s", $s));
+        $string = new String('Hello, world!');
+        $this->assertEquals('Hello, world!', sprintf("%s", $string));
     }
 
     public function testPrepend()
@@ -67,7 +67,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
 
     public function testLength()
     {
-        $s = new String('Hello, world');
-        $this->assertEquals(12, $s->length());
+        $string = new String('Hello, world');
+        $this->assertEquals(12, $string->length());
     }
 }
