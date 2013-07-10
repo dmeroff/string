@@ -1,8 +1,7 @@
 {
     "autoload": {
         "psr-0": {
-            "Dektrium": ""
+            "String": "src/"
         }
-    },
-    "target-dir": "Dektrium/Component/String"
+    }
 }
