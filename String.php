@@ -38,18 +38,19 @@ class String
     /**
      * Creates new string instance.
      *
-     * @param  string $string String to manipulate.
+     * @param  string $string
+     * @param  string $encoding
      *
      * @return static
      */
-    public static function make($string = '')
+    public static function make($string = '', $encoding = 'UTF-8')
     {
-        return new static($string);
+        return new static($string, $encoding);
     }
 
     /**
      * Returns the length of a string.
-     * 
+     *
      * @return int
      */
     public function length()
