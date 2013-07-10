@@ -22,4 +22,10 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $s = new String('Hello, world!');
         $this->assertEquals('Hello, world!', sprintf("%s", $s));
     }
+
+    public function testLength()
+    {
+        $s = new String('Hello, world');
+        $this->assertEquals(12, $s->length());
+    }
 }

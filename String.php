@@ -48,6 +48,16 @@ class String
     }
 
     /**
+     * Returns the length of a string.
+     * 
+     * @return int
+     */
+    public function length()
+    {
+        return $this->mbstring ? mb_strlen($this->string, $this->encoding) : strlen($this->string);
+    }
+
+    /**
      * Gets the string.
      *
      * @return string
