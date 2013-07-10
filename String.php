@@ -49,6 +49,34 @@ class String
     }
 
     /**
+     * Prepends a string to current string
+     *
+     * @param  string $string
+     *
+     * @return $this
+     */
+    public function prepend($string = '')
+    {
+        $this->string = $string . $this->string;
+
+        return $this;
+    }
+
+    /**
+     * Appends a string to current string
+     *
+     * @param  string $string
+     *
+     * @return $this
+     */
+    public function append($string = '')
+    {
+        $this->string .= $string;
+
+        return $this;
+    }
+
+    /**
      * Returns the length of a string.
      *
      * @return int
