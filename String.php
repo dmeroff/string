@@ -8,7 +8,7 @@
 class String
 {
     /**
-     * @var string
+     * @var string String to manipulate.
      */
     protected $string;
 
@@ -18,14 +18,21 @@ class String
     protected $mbstring;
 
     /**
+     * @var string Encoding of the string.
+     */
+    protected $encoding;
+
+    /**
      * Constructor.
      *
-     * @param string $string String to manipulate.
+     * @param string $string
+     * @param string $encoding
      */
-    public function __construct($string = '')
+    public function __construct($string = '', $encoding = 'UTF-8')
     {
         $this->string   = $string;
         $this->mbstring = extension_loaded('mbstring');
+        $this->encoding = $encoding;
     }
 
     /**
