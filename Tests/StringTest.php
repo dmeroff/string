@@ -16,4 +16,10 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $s = String::make('Hello, world!');
         $this->assertAttributeEquals('Hello, world!', 'string', $s);
     }
+
+    public function test__ToString()
+    {
+        $s = new String('Hello, world!');
+        $this->assertEquals('Hello, world!', sprintf("%s", $s));
+    }
 }

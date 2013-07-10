@@ -33,4 +33,24 @@ class String
     {
         return new static($string);
     }
+
+    /**
+     * Gets the string.
+     *
+     * @return string
+     */
+    public function get()
+    {
+        return $this->string;
+    }
+
+    /**
+     * PHP magic method. Gets the string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->string;
+    }
 }
