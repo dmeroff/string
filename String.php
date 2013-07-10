@@ -13,13 +13,19 @@ class String
     protected $string;
 
     /**
+     * @var bool Whether "mbstring" php extension is loaded.
+     */
+    protected $mbstring;
+
+    /**
      * Constructor.
      *
      * @param string $string String to manipulate.
      */
     public function __construct($string = '')
     {
-        $this->string = $string;
+        $this->string   = $string;
+        $this->mbstring = extension_loaded('mbstring');
     }
 
     /**
