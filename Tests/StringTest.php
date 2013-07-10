@@ -1,7 +1,6 @@
 <?php
 namespace Dektrium\Component\String\Tests;
 
-
 use Dektrium\Component\String\String;
 
 class StringTest extends \PHPUnit_Framework_TestCase
@@ -41,10 +40,18 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('Hello, world', 'string', $string);
     }
 
+    public function testReplace()
+    {
+        $string = new String('Hello, world');
+        $string->replace('Hello', 'Goodbye');
+
+        $this->assertAttributeEquals('Goodbye, world', 'string', $string);
+    }
+
     public function testUppercase()
     {
         $string = new String('Hello, world');
-        $string = $string->uppercase();
+        $string->uppercase();
 
         $this->assertAttributeEquals('HELLO, WORLD', 'string', $string);
     }
@@ -52,7 +59,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     public function testCapitalize()
     {
         $string = new String('hello');
-        $string = $string->capitalize();
+        $string->capitalize();
 
         $this->assertAttributeEquals('Hello', 'string', $string);
     }
@@ -60,7 +67,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     public function testLowercase()
     {
         $string = new String('HELLO, WORLD');
-        $string = $string->lowercase();
+        $string->lowercase();
 
         $this->assertAttributeEquals('hello, world', 'string', $string);
     }

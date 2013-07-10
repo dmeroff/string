@@ -77,6 +77,21 @@ class String
     }
 
     /**
+     * Replaces all occurrences of the search string with the replacement string.
+     *
+     * @param mixed $search  The value being searched for, otherwise known as the needle.
+     * @param mixed $replace The replacement value that replaces found search
+     *
+     * @return $this
+     */
+    public function replace($search, $replace)
+    {
+        $this->string = str_replace($search, $replace, $this->string);
+
+        return $this;
+    }
+
+    /**
      * Makes a string lowercase.
      *
      * @return $this
