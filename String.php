@@ -77,6 +77,42 @@ class String
     }
 
     /**
+     * Makes a string lowercase.
+     *
+     * @return $this
+     */
+    public function lowercase()
+    {
+        $this->string = $this->mbstring ? mb_strtolower($this->string, $this->encoding) : strtolower($this->string);
+
+        return $this;
+    }
+
+    /**
+     * Makes a string's first character uppercase.
+     *
+     * @return $this
+     */
+    public function uppercase()
+    {
+        $this->string = $this->mbstring ? mb_strtoupper($this->string, $this->encoding) : strtoupper($this->string);
+
+        return $this;
+    }
+
+    /**
+     * Makes first letter uppercase.
+     *
+     * @return $this
+     */
+    public function capitalize()
+    {
+        $this->string = ucfirst($this->string);
+
+        return $this;
+    }
+
+    /**
      * Returns the length of a string.
      *
      * @return int
