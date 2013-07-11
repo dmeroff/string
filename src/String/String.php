@@ -13,11 +13,6 @@ class String
     protected $string;
 
     /**
-     * @var bool Whether "mbstring" php extension is loaded.
-     */
-    protected $mbstring;
-
-    /**
      * @var string Encoding of the string.
      */
     protected $encoding;
@@ -27,11 +22,15 @@ class String
      *
      * @param string $string
      * @param string $encoding
+     *
+     * @throws \RuntimeException
      */
     public function __construct($string = '', $encoding = 'UTF-8')
     {
+        if (!extension_loaded('mbstring')) {
+            throw new \RuntimeException('This class requires "mbstring" php extension be installed.');
+        }
         $this->string   = $string;
-        $this->mbstring = extension_loaded('mbstring');
         $this->encoding = $encoding;
     }
 
@@ -52,7 +51,7 @@ class String
      * Prepends a string to current string
      *
      * @param  string $string
-     *
+     * 
      * @return $this
      */
     public function prepend($string = '')
@@ -98,7 +97,7 @@ class String
      */
     public function lowercase()
     {
-        $this->string = $this->mbstring ? mb_strtolower($this->string, $this->encoding) : strtolower($this->string);
+        $this->string = mb_strtolower($this->string, $this->encoding);
 
         return $this;
     }
@@ -110,7 +109,7 @@ class String
      */
     public function uppercase()
     {
-        $this->string = $this->mbstring ? mb_strtoupper($this->string, $this->encoding) : strtoupper($this->string);
+        $this->string = mb_strtoupper($this->string, $this->encoding);
 
         return $this;
     }
@@ -186,7 +185,7 @@ class String
      */
     public function length()
     {
-        return $this->mbstring ? mb_strlen($this->string, $this->encoding) : strlen($this->string);
+        return mb_strlen($this->string, $this->encoding);
     }
 
     /**
