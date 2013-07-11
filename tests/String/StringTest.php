@@ -47,6 +47,14 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('Goodbye, world', 'string', $string);
     }
 
+    public function testLowercase()
+    {
+        $string = new String('HELLO, WORLD');
+        $string->lowercase();
+
+        $this->assertAttributeEquals('hello, world', 'string', $string);
+    }
+
     public function testUppercase()
     {
         $string = new String('Hello, world');
@@ -63,12 +71,28 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('Hello', 'string', $string);
     }
 
-    public function testLowercase()
+    public function testTitlecase()
     {
-        $string = new String('HELLO, WORLD');
-        $string->lowercase();
+        $string = new String('hello, world');
+        $string->titlecase();
 
-        $this->assertAttributeEquals('hello, world', 'string', $string);
+        $this->assertAttributeEquals('Hello, World', 'string', $string);
+    }
+
+    public function testCamelcase()
+    {
+        $string = new String('hello, world');
+        $string->camelcase();
+
+        $this->assertAttributeEquals('helloWorld', 'string', $string);
+    }
+
+    public function testUnderscore()
+    {
+        $string = new String('hello, world');
+        $string->underscore();
+
+        $this->assertAttributeEquals('hello_world', 'string', $string);
     }
 
     public function testReverse()

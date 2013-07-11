@@ -128,8 +128,48 @@ class String
     }
 
     /**
+     * Converts the string to title case.
+     *
+     * @return $this
+     */
+    public function titlecase()
+    {
+        $this->string = ucwords($this->string);
+
+        return $this;
+    }
+
+    /**
+     * Converts the string to CamelCase (e.g: "hello world" => "helloWorld").
+     * It will remove non alphanumeric character from the string.
+     *
+     * @return $this
+     */
+    public function camelcase()
+    {
+        $this->string = str_replace(' ', '', ucwords(preg_replace('/[^A-Z^a-z^0-9]+/', ' ', $this->string)));
+        $this->string = lcfirst($this->string);
+
+        return $this;
+    }
+
+    /**
+     * Converts the spaces in string to underscores and lowercases the string (e.g: "hello world" => "hello_world").
+     * It will remove non alphanumeric character from the string.
+     *
+     * @return $this
+     */
+    public function underscore()
+    {
+        $this->lowercase();
+        $this->string = str_replace(' ', '_', preg_replace('/[^A-Z^a-z^0-9]+/', ' ', $this->string));
+
+        return $this;
+    }
+
+    /**
      * Reverses a string.
-     * 
+     *
      * @return $this
      */
     public function reverse()
