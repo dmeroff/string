@@ -50,7 +50,7 @@ class LetterPairSimilarity
      */
     protected static function wordLetterPairs($string)
     {
-        $allPairs = [];
+        $allPairs = array();
         $words = explode(' ', $string);
 
         foreach ($words as $word) {
@@ -73,7 +73,7 @@ class LetterPairSimilarity
     protected static function letterPairs($string)
     {
         $numPairs = mb_strlen($string, 'UTF-8') - 1;
-        $pairs = [];
+        $pairs = array();
         for ($i = 0; $i < $numPairs; $i++) {
             $pairs[] = mb_substr($string, $i, 2, 'UTF-8');
         }
