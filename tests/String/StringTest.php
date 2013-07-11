@@ -63,10 +63,10 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('HELLO, WORLD', 'string', $string);
     }
 
-    public function testCapitalize()
+    public function testSentencecase()
     {
-        $string = new String('hello');
-        $string->capitalize();
+        $string = new String('heLLo');
+        $string->sentencecase();
 
         $this->assertAttributeEquals('Hello', 'string', $string);
     }

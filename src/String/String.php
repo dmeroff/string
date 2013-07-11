@@ -51,7 +51,7 @@ class String
      * Prepends a string to current string
      *
      * @param  string $string
-     * 
+     *
      * @return $this
      */
     public function prepend($string = '')
@@ -119,8 +119,9 @@ class String
      *
      * @return $this
      */
-    public function capitalize()
+    public function sentencecase()
     {
+        $this->lowercase();
         $this->string = ucfirst($this->string);
 
         return $this;
