@@ -33,7 +33,7 @@ echo String\String::make($string)->replace('hello', 'goodbye')->sentencecase(); 
 LetterPairSimilarity class
 --------------------------
 
-This class can be used to compare string using (http://www.catalysoft.com/articles/strikeamatch.html)["Strike a match"] algorithm.
+This class can be used to compare string using ["Strike a match"](http://www.catalysoft.com/articles/strikeamatch.html) algorithm.
 
 ```php
 $similarity = String\LetterPairSimilarity('Healed', 'Healthy');
@@ -42,3 +42,6 @@ echo round($similarity, 2); // 0.55
 
 Requirements
 ------------
+
+- PHP 5.3 and higher
+- mbstring extension
