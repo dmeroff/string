@@ -36,7 +36,7 @@ LetterPairSimilarity class
 This class can be used to compare string using ["Strike a match"](http://www.catalysoft.com/articles/strikeamatch.html) algorithm.
 
 ```php
-$similarity = String\LetterPairSimilarity('Healed', 'Healthy');
+$similarity = String\LetterPairSimilarity::compare('Healed', 'Healthy');
 echo round($similarity, 2); // 0.55
 ```
 
