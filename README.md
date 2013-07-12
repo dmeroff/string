@@ -33,7 +33,7 @@ echo String\String::make($string)->replace('hello', 'goodbye')->sentencecase(); 
 LetterPairSimilarity class
 --------------------------
 
-This class can be used to compare string using [http://www.catalysoft.com/articles/strikeamatch.html]("Strike a match") algorithm.
+This class can be used to compare string using (http://www.catalysoft.com/articles/strikeamatch.html)["Strike a match"] algorithm.
 
 ```php
 $similarity = String\LetterPairSimilarity('Healed', 'Healthy');
