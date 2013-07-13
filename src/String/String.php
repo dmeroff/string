@@ -76,6 +76,45 @@ class String
     }
 
     /**
+     * Strips whitespace (or other characters) from the beginning and end of a string.
+     *
+     * @param string $charlist
+     * @return $this
+     */
+    public function trim($charlist = ' \t\n\r\0\x0B')
+    {
+        $this->string = trim($this->string, $charlist);
+
+        return $this;
+    }
+
+    /**
+     * Strips whitespace (or other characters) from the beginning a string.
+     *
+     * @param string $charlist
+     * @return $this
+     */
+    public function ltrim($charlist = ' \t\n\r\0\x0B')
+    {
+        $this->string = ltrim($this->string, $charlist);
+
+        return $this;
+    }
+
+    /**
+     * Strips whitespace (or other characters) from the end of a string.
+     *
+     * @param string $charlist
+     * @return $this
+     */
+    public function rtrim($charlist = ' \t\n\r\0\x0B')
+    {
+        $this->string = rtrim($this->string, $charlist);
+
+        return $this;
+    }
+
+    /**
      * Replaces all occurrences of the search string with the replacement string.
      *
      * @param mixed $search  The value being searched for, otherwise known as the needle.

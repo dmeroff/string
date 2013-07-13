@@ -39,6 +39,30 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('Hello, world', 'string', $string);
     }
 
+    public function testTrim()
+    {
+        $string = new String(' hello ');
+        $string->trim();
+
+        $this->assertAttributeEquals('hello', 'string', $string);
+    }
+
+    public function testLtrim()
+    {
+        $string = new String(' hello');
+        $string->ltrim();
+
+        $this->assertAttributeEquals('hello', 'string', $string);
+    }
+
+    public function testRtrim()
+    {
+        $string = new String('hello ');
+        $string->rtrim();
+
+        $this->assertAttributeEquals('hello', 'string', $string);
+    }
+
     public function testReplace()
     {
         $string = new String('Hello, world');
