@@ -1,4 +1,15 @@
 {
+	"name": "dmeroff/string",
+	"description": "PHP 5.3 String manipulation library",
+	"keywords": ["string"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dmitry Erofeev",
+			"email": "dmeroff@gmail.com",
+			"homepage": "http://dmeroff.ru"
+		}
+	],
     "autoload": {
         "psr-0": {
             "String": "src/"
