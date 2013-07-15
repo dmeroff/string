@@ -21,6 +21,16 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Hello, world!', sprintf("%s", $string));
     }
 
+    public function test__Invoke()
+    {
+        $string = new String('Hello, world!');
+        $chars = $string(7);
+        $this->assertEquals('world!', $chars);
+
+        $chars = $string(1, 4);
+        $this->assertEquals('ello', $chars);
+    }
+
     public function testPrepend()
     {
         $string = new String('world');

@@ -247,4 +247,23 @@ class String
     {
         return $this->string;
     }
+
+    /**
+     * Returns the portion of string specified by the start and length parameters.
+     *
+     * @param  int $start  Position of first character to use
+     * @param  int $length Maximum number of characters to use
+     * @return string
+     */
+    public function __invoke()
+    {
+        if (func_num_args() > 1) {
+            $start = func_get_arg(0);
+            $length = func_get_arg(1);
+            return mb_substr($this->string, $start, $length, $this->encoding);
+        } else {
+            $start = func_get_arg(0);
+            return mb_substr($this->string, $start, $this->length(), $this->encoding);
+        }
+    }
 }
