@@ -134,7 +134,7 @@ class String
      *
      * @return $this
      */
-    public function lowercase()
+    public function lower()
     {
         $this->string = mb_strtolower($this->string, $this->encoding);
 
@@ -146,7 +146,7 @@ class String
      *
      * @return $this
      */
-    public function uppercase()
+    public function upper()
     {
         $this->string = mb_strtoupper($this->string, $this->encoding);
 
@@ -158,9 +158,9 @@ class String
      *
      * @return $this
      */
-    public function sentencecase()
+    public function capitalize()
     {
-        $this->lowercase();
+        $this->lower();
         $this->string = ucfirst($this->string);
 
         return $this;
@@ -171,7 +171,7 @@ class String
      *
      * @return $this
      */
-    public function titlecase()
+    public function title()
     {
         $this->string = ucwords($this->string);
 
@@ -200,7 +200,7 @@ class String
      */
     public function underscore()
     {
-        $this->lowercase();
+        $this->lower();
         $this->string = str_replace(' ', '_', preg_replace('/[^A-Z^a-z^0-9]+/', ' ', $this->string));
 
         return $this;

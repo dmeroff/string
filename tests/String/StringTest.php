@@ -81,34 +81,34 @@ class StringTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('Goodbye, world', 'string', $string);
     }
 
-    public function testLowercase()
+    public function testLower()
     {
         $string = new String('HELLO, WORLD');
-        $string->lowercase();
+        $string->lower();
 
         $this->assertAttributeEquals('hello, world', 'string', $string);
     }
 
-    public function testUppercase()
+    public function testUpper()
     {
         $string = new String('Hello, world');
-        $string->uppercase();
+        $string->upper();
 
         $this->assertAttributeEquals('HELLO, WORLD', 'string', $string);
     }
 
-    public function testSentencecase()
+    public function testCapitalize()
     {
         $string = new String('heLLo');
-        $string->sentencecase();
+        $string->capitalize();
 
         $this->assertAttributeEquals('Hello', 'string', $string);
     }
 
-    public function testTitlecase()
+    public function testTitle()
     {
         $string = new String('hello, world');
-        $string->titlecase();
+        $string->title();
 
         $this->assertAttributeEquals('Hello, World', 'string', $string);
     }
